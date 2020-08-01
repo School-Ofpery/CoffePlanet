@@ -1,0 +1,43 @@
+.main-header{
+    padding-top: 49px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-navigation{
+    display: flex;
+    align-items: baseline;
+
+    &__links{
+        display: flex;
+        align-items: baseline;
+        &_tels{
+            margin-left: 50px;
+        }
+    }
+
+    &__item{
+        & + &{
+            margin-left: 16px;
+        }
+
+        &::after{
+            content: '';
+            display: block;
+            width: 0;
+            border-bottom: 1px solid @colorHLine;
+        }
+
+        &:hover::after{
+            width: 100%;
+            transition: width @transT;
+        }
+    }
+
+    &__link{
+        color: #000;
+        font-weight: @fontNormal;
+        font-size: 14px;
+    }
+}
