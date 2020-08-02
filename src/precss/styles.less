@@ -27,8 +27,9 @@ body{
 	line-height: 1.5;
 }
 
-.btn-reset(){
+.btn-reset{
 	appearance: none;
+  	border-radius: 0;
   	opacity: 1;
 	border: none;
 	background-color: transparent;
@@ -37,7 +38,7 @@ body{
 }
 
 ::-webkit-scrollbar{
-	width: 7px;
+	width: 10px;
 	height: 5px;
 	background-color: #eee;
 }
@@ -133,54 +134,3 @@ a{
 
 /* General */
 
-.banner{
-	padding-top: 190px;
-	padding-bottom: 265px;
-	background-image: url(../img/first-screen-bg.jpg);
-	background-size: cover;
-	background-position: center;
-
-	&__text{
-		margin: 0;
-		margin-bottom: 41px;
-		font-size: 90px;
-		.size(7);
-		line-height: 1.2;
-	}
-
-	&__navigation{
-
-	}
-
-	&__btn{
-		.btn-reset();
-		border-radius: 28.5px;
-		height: 57px;
-		padding-left: 55px;
-		padding-right: 55px;
-		border: 2px solid transparent;
-		vertical-align: bottom;
-		font-size: 16px;
-		font-weight: @fontSBold;
-		&_colored{
-			background-color: @colorMain;
-			color: #fff;
-			box-shadow: 0px 7px 21px 0px rgba(55, 125, 60, 0.3);
-			&:hover{
-				background-color: @colorHLine;
-				transition: background-color @transT;
-			}
-		}
-
-		&_transparent{
-			border-color: @colorHLine;
-			margin-left: 20px;
-			color: #000;
-			&:hover{
-				color: #fff;
-				background-color: @colorHLine;
-				transition: background-color @transT;
-			}
-		}
-	}
-}
