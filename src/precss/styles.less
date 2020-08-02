@@ -263,10 +263,59 @@ a{
 	&__name{
 		margin: 0;
 		margin-bottom: 13px;
+		font-size: 16px;
 	}
 
 	&__price{
 		font-weight: @fontBold;
 		color: @colorMain;
+	}
+}
+
+.about{
+	padding-top: 84px;
+	padding-bottom: 108px;
+	.clearfix();
+
+	&__h{
+		text-align: left;
+	}
+
+	&__slider{
+		float: left;
+	}
+}
+
+.coffee-slider{
+	width: 50%;
+	padding-right: @offset;
+	&__slide{
+		&:last-child{
+			display: none;
+		}
+	}
+
+	&__container{
+		margin-bottom: 10px;
+	}
+
+	&__btns{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin: 0;
+		margin-left: auto;
+	}
+
+	&__btn{
+		width: 30px;
+		.btn-reset();
+		path{
+			fill: @colorMain;
+		}
+
+		&_prev{
+			transform: rotate(-180deg) translateY(1px);
+		}
 	}
 }
