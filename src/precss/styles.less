@@ -270,3 +270,63 @@ a{
 		color: @colorMain;
 	}
 }
+
+.about{
+	padding-top: 84px;
+	padding-bottom: 112px;
+
+	&__slider{
+		width: 50%;
+		padding-right: @offset;
+		float: left;
+	}
+
+	&__figure{
+		margin: 0;
+		margin-bottom: 15px;
+		padding: 0;
+	}
+
+	&__h{
+		text-align: left;
+	}
+}
+
+.article-slider{
+	// Временное решение
+	&__slide{
+		display: none;
+		&:first-child{
+			display: block;
+		}
+	}
+
+	&__img{
+		vertical-align: bottom;
+	}
+
+	&__btns{
+		margin: 0;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	&__btn{
+		.btn-reset();
+		width: 20px;
+		padding: 0;
+
+		&_prev{
+			transform: rotate(-180deg) translateY(1px);
+		}
+
+		&_next{
+			margin-left: 15px;
+		}
+
+		path{
+			fill: @colorMain;
+		}
+	}
+}
