@@ -1,8 +1,6 @@
 @import 'libs/smart-grid.less';
 @import 'libs/vars.less';
 @import 'libs/mixins.less';
-@import '_header.less';
-@import '_foot.less';
 
 /* Set defaults */
 
@@ -131,7 +129,18 @@ a{
 	line-height: 1.1;
 }
 
+.short-text{
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 14px;
+	color: @colorTGraySection;
+}
+
 /* General */
+
+@import '_header.less';
+@import '_foot.less';
 
 .banner{
 	padding-top: 190px;
@@ -187,11 +196,6 @@ a{
 	}
 
 	&__text{
-		width: 50%;
-		text-align: center;
-		margin: 0 auto;
-		font-size: 14px;
-		color: @colorTGraySection;
 		margin-bottom: 50px;
 	}
 
@@ -290,10 +294,33 @@ a{
 
 	&__h{
 		text-align: left;
+		margin-bottom: 40px;
+		padding-top: 32px;
+	}
+
+	&__text{
+		margin: 0;
+		margin-bottom: 24px;
+		font-size: 14px;
+		&:nth-of-type(3){
+			clear: both;
+		}
+	}
+
+	&__btn{
+		.btn-reset();
+		margin-bottom: 24px;
+		color: @colorMain;
+		font-weight: @fontSBold;
+		padding: 5px 0;
+		border-bottom: 1px solid @colorHLine;
 	}
 }
+  
 
 .article-slider{
+	margin-bottom: 32px;
+
 	// Временное решение
 	&__slide{
 		display: none;
@@ -329,5 +356,18 @@ a{
 		path{
 			fill: @colorMain;
 		}
+	}
+}
+
+.features{
+	padding-top: 112px;
+	padding-bottom: 120px;
+
+	&__h{
+		margin-bottom: 28px;
+	}
+
+	&__text{
+		margin-bottom: 70px;
 	}
 }
