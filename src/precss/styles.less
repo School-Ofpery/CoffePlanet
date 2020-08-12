@@ -378,13 +378,24 @@ a{
 }
 
 .about{
-	padding-top: 84px;
-	padding-bottom: 112px;
+	.res-padding(84px, 112px);
+	.media-max(750px, {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	});
 
 	&__slider{
 		width: 50%;
 		padding-right: @offset;
 		float: left;
+		.media-max(750px, {
+			float: none;
+			max-width: 568px;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		});
 	}
 
 	&__figure{
@@ -397,6 +408,12 @@ a{
 		text-align: left;
 		margin-bottom: 40px;
 		padding-top: 32px;
+		.media-max(750px, {
+			padding-top: 0;
+			text-align: center;
+			order: -1;
+			width: 100%;
+		});
 	}
 
 	&__text{
@@ -415,12 +432,18 @@ a{
 		font-weight: @fontSBold;
 		padding: 5px 0;
 		border-bottom: 1px solid @colorHLine;
+		.media-max(400px, {
+			font-size: 14px;
+		});
 	}
 }
   
 
 .article-slider{
 	margin-bottom: 32px;
+	.media-max(750px, {
+		margin-bottom: 20px;
+	});
 
 	// Временное решение
 	&__slide{
@@ -463,6 +486,10 @@ a{
 .features{
 	padding-top: 112px;
 	padding-bottom: 120px;
+	.media-max(650px, {
+		padding-top: 56px;
+		padding-bottom: 60px;
+	});
 
 	&__h{
 		margin-bottom: 28px;

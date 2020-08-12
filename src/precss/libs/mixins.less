@@ -10,6 +10,15 @@
 	}
 }
 
+.res-padding(@pt, @pb, @brk: 650px){
+	padding-top: @pt;
+	padding-bottom: @pb;
+	.media-max(@brk, {
+		padding-top: @pt / 2;
+		padding-bottom: @pb /2;
+	});
+}
+
 .media-range(@brk1; @brk2; @block){
 	@media screen and (min-width: @brk1) and (max-width: @brk2){
 		@block();
