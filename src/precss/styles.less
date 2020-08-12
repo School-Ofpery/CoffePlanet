@@ -370,4 +370,58 @@ a{
 	&__text{
 		margin-bottom: 70px;
 	}
+
+	&__list{
+		margin: 0;
+		padding: 0;
+		.row-flex();
+	}
+
+	&__item{
+		padding-top: 106px;
+		padding-bottom: 18px;
+		width: 25%;
+		text-align: center;
+		font-size: 16px;
+		font-weight: @fontSBold;
+		position: relative;
+
+		& + &{
+			border-left: 1px solid #ddd;
+		}
+
+		&::before,
+		&::after{
+			content: '';
+			display: block;
+			position: absolute;
+			@size: 70px;
+			width: @size;
+			height: @size;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 18px;
+			background-color: #eaf4eb;
+			border-radius: 50%;
+		}
+		&::after{
+			@size: 30px;
+			background-size: @size @size;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		&_drinks::after{
+			background-image: url(../img/icons/noun_Coffee_848419.svg);
+		}
+		&_sweets::after{
+			background-image: url(../img/icons/noun_muffin_572526.svg);
+		}
+		&_wifi::after{
+			background-image: url(../img/icons/noun_wifi_2452937.svg);
+		}
+		&_seats::after{
+			background-image: url(../img/icons/noun_Sofa_1526269.svg);
+		}
+	}
 }
