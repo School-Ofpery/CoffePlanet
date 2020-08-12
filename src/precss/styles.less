@@ -364,6 +364,9 @@ a{
 	&__pic{
 		margin-bottom: 26px;
 		width: 100%;
+		.media-max(650px, {
+			margin-bottom: 20px;
+		});
 	}
 
 	&__name{
@@ -395,6 +398,7 @@ a{
 			width: 100%;
 			margin-left: auto;
 			margin-right: auto;
+			padding-right: 0;
 		});
 	}
 
@@ -497,6 +501,9 @@ a{
 
 	&__text{
 		margin-bottom: 70px;
+		.media-max(700px, {
+			margin-bottom: 45px;
+		});
 	}
 
 	&__list{
@@ -513,6 +520,18 @@ a{
 		font-size: 16px;
 		font-weight: @fontSBold;
 		position: relative;
+		.media-max(700px, {
+			width: 50%;
+			&:nth-child(n+3){
+				border-top: 1px solid #ddd;
+			}
+			&:nth-child(odd){
+				border-left: none;
+			}
+		});
+		.media-max(400px, {
+			font-size: 14px;
+		});
 
 		& + &{
 			border-left: 1px solid #ddd;
