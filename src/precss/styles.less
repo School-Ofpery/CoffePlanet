@@ -127,6 +127,9 @@ a{
 	margin: 0;
 	text-align: center;
 	line-height: 1.1;
+	.media-max(500px, {
+		font-size: 40px;
+	});
 }
 
 .short-text{
@@ -135,6 +138,9 @@ a{
 	margin: 0 auto;
 	font-size: 14px;
 	color: @colorTGraySection;
+	.media-max(500px, {
+		width: 75%;
+	});
 }
 
 .btn-mobile{
@@ -273,9 +279,16 @@ a{
 .menu{
 	padding-top: 180px;
 	padding-bottom: 84px;
+	.media-max(650px, {
+		padding-top: 90px;
+		padding-bottom: 64px;
+	});
 
 	&__h{
 		margin-bottom: 44px;
+		.media-max(500px, {
+			margin-bottom: 30px;
+		});
 	}
 
 	&__text{
@@ -292,6 +305,8 @@ a{
 	justify-content: center;
 	align-items: baseline;
 	padding: 0;
+	min-width: 280px;
+	overflow-x: auto;
 
 	&__item{
 		@offset: 4px;
@@ -300,6 +315,9 @@ a{
 
 		& + &{
 			margin-left: 60px;
+			.media-max(600px, {
+				margin-left: 30px;
+			});
 		}
 
 		&.active,
