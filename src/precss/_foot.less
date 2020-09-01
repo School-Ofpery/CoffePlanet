@@ -56,4 +56,179 @@
         display: block;
     }
 }
-  
+
+.preloader{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    animation-name: allObjects;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+    &::before,
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        top: 0;
+        z-index: 2;
+        animation-delay: 6s;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+    }
+    &::before{
+        left: 0;
+        animation-name: wallLeft;
+    }
+    &::after{
+        right: 0;
+        animation-name: wallRight;
+    }
+    &__logo{
+        display: block;
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        max-width: 250px;
+        transform: translate(-50%, -50%);
+        margin-top: 50px;
+        z-index: 4;
+        animation: logo 1s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+    }
+    svg{
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+        min-width: 300px;
+        height: auto;
+    }
+    .bg{
+        fill: none;
+    }
+    .cup{
+        fill: none;
+        stroke: #000;
+        stroke-width: 2;
+        stroke-dashoffset: 671.36;
+        stroke-dasharray: 671.36;
+        animation-name: draw;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+    }
+    .liquid{
+        fill: #351f02;
+        stroke: none;
+        transform: translateY(100%);
+        animation: fillCoffee 1s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+    }
+    .steam{
+        fill: none;
+        stroke: #000;
+        stroke-width: 2;
+        stroke-dashoffset: 192.47;
+        stroke-dasharray: 192.47;
+        animation-name: draw;
+        animation-duration: 2s;
+        animation-delay: 4s;
+        animation-fill-mode: forwards;
+    }
+    .sleeve{
+        stroke: #000;
+        stroke-width: 1;
+        fill: @colorMain;
+        stroke-dashoffset: 453.58;
+        stroke-dasharray: 453.58;
+        animation-name: draw, fillGreen;
+        animation-duration: 1s, 1s;
+        animation-fill-mode: forwards;
+    }
+    .lid{
+        stroke: #000;
+        stroke-width: 2;
+        fill: @colorMain;
+        stroke-dashoffset: 431.62;
+        stroke-dasharray: 431.62;
+        animation-name: draw, fillGreen;
+        animation-duration: 1s, 1s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes draw{
+    to{
+        stroke-dashoffset: 0; 
+    }
+}
+
+@keyframes fillGreen{
+    from{
+        fill: #fff;
+    }
+    to{
+        fill: @colorMain;
+    }
+}
+
+@keyframes fillCoffee{
+    to{
+        transform: translateY(5%);
+    }
+}
+
+@keyframes logo{
+    from{
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes wallLeft{
+    from{
+        left: 0;
+        opacity: 1;
+    }
+    to{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes wallRight{
+    from{
+        right: 0;
+        opacity: 1;
+    }
+    to{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes allObjects{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        height: 0;
+    }
+}
