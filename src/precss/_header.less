@@ -1,11 +1,20 @@
 .main-header{
-    padding-top: 49px;
-    position: absolute;
+    padding-top: 49px; 
     width: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
+    transition: @transT;
     .media-max(520px, {
 		padding-top: 30px;
-	});
+    });
+    
+    &.scrolled{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #fff;
+        z-index: 99999;
+    }
     
     &__wrap{
         display: flex;
