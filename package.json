@@ -41,6 +41,8 @@
   ],
   "dependencies": {
     "animate.css": "^4.1.0",
+    "jquery": "^3.5.1",
+    "slick-carousel": "^1.8.1",
     "wow.js": "^1.2.2"
   }
 }
