@@ -21,3 +21,31 @@ preloader.addEventListener('animationend', function(e){
         document.body.classList.remove('ov-h');
     }
 });
+
+let mobileBtn = document.querySelector('.btn-mobile');
+let headerNav = document.querySelector('.main-header__nav');
+function mobileMenuOpen(){
+    mobileBtn.classList.add('is-open');
+    headerNav.classList.add('is-open');
+    document.body.classList.add('ov-h');
+}
+
+function mobileMenuClose(){
+    document.body.classList.remove('ov-h');
+    mobileBtn.classList.remove('is-open');
+    headerNav.classList.remove('is-open');
+}
+
+mobileBtn.addEventListener('click', () => {
+    if( mobileBtn.classList.contains('is-open') ){
+        mobileMenuClose();
+    } else{
+        mobileMenuOpen();
+    }
+});
+
+headerNav.addEventListener('click', e => {
+    if( headerNav.classList.contains('is-open') ){
+        mobileMenuClose();
+    }
+});
