@@ -173,6 +173,55 @@
         </ul>
     </section>
 
+    <section class="feedbacks">
+        <h2 class="animate animate__fadeInUp main-heading feedbacks__h">
+            Our happy visitors say:
+        </h2>
+        <div class="row">
+            {% 
+                set feeds = [
+                    {
+                        photo: 'feed1.jpg',
+                        name: 'Dennis Simpson',
+                        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic blanditiis quod adipisci placeat qui, debitis velit? Maiores, consequuntur porro? Voluptates quibusdam consequuntur temporibus doloremque molestias repudiandae sit, dolorem deserunt est? ',
+                        date: '30.04.2020',
+                        dateTime: '2020-04-30'
+                    },
+                    {
+                        photo: 'feed2.jpg',
+                        name: 'Andrew Smith',
+                        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic blanditiis quod adipisci placeat qui, debitis velit? Maiores, consequuntur porro? Voluptates quibusdam consequuntur temporibus doloremque molestias repudiandae sit, dolorem deserunt est? ',
+                        date: '01.06.2020',
+                        dateTime: '2020-06-01'
+                    },
+                    {
+                        photo: 'feed3.jpg',
+                        name: 'George Cuper',
+                        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic blanditiis quod adipisci placeat qui, debitis velit? Maiores, consequuntur porro? Voluptates quibusdam consequuntur temporibus doloremque molestias repudiandae sit, dolorem deserunt est? ',
+                        date: '13.08.2020',
+                        dateTime: '2020-08-13'
+                    }
+                ] 
+            %}
+            {% for feed in feeds %}
+            <article class="animate animate__fadeInUp feedback">
+                <figure class="feedback__figure">
+                    <img class="feedback__img" src="img/{{feed.photo}}" alt="{{feed.name}} photo">
+                </figure>
+                <h3 class="feedback__h">
+                    {{feed.name}}
+                </h3>
+                <p class="feedback__text">
+                    {{feed.text}}
+                </p>
+                <time class="feedback__date" datetime="{{feed.dateTime}}">
+                    {{feed.date}}
+                </time>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
 </main>
  
 {% include 'parts/_foot.html' %}
